@@ -1,0 +1,28 @@
+h1, p {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+p {
+    font-size: large;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 450px;
+    border-right: 1px solid black;
+}
+
+.game {
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 450px);
+}
+
+canvas {
+    border: black 3px solid
+}
