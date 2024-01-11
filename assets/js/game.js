@@ -8,8 +8,8 @@ let colorPink = "rgb(255, 0, 255)";
 let colorBlack = "rgb(0, 0, 0)";
 let refreshRate = 1000 / 144;
 
-let ballHeight = 100;
-let ballWidth = 100;
+let ballHeight = 40;
+let ballWidth = 40;
 
 let ballX;
 let ballY;
@@ -141,7 +141,7 @@ let incrementPlayerTwoScore = function () {
 let frame = function () {
     context.fillStyle = colorBlack
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillRect((canvas.width / 2) - 2, 0, 6, canvas.height)
+    context.fillRect((canvas.width / 2) - 3, 0, 6, canvas.height)
 
     leftPaddle.draw();
     rightPaddle.draw();
