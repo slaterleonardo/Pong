@@ -1,9 +1,15 @@
-h1, p {
+body {
+    background-color: #5f5f5f;
+}
+
+h1, p, label     {
+    color: white;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
 }
 
 p {
+    color: white;
     font-size: large;
 }
 
@@ -12,9 +18,41 @@ body {
     justify-content: space-between;
 }
 
+canvas {
+    border: black 3px solid
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #d4d4d4;
+}
+
+button:disabled {
+    background-color: #d4d4d4;
+    color: #a0a0a0;
+
+}
+
+.playerForm {
+    border-bottom: 3px solid black;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
 .sidebar {
     width: 450px;
-    border-right: 1px solid black;
+    border-right: 3px solid black;
 }
 
 .game {
@@ -23,6 +61,6 @@ body {
     width: calc(100% - 450px);
 }
 
-canvas {
-    border: black 3px solid
+.header {
+    border-bottom: 3px solid black;
 }
