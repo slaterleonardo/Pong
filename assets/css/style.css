@@ -10,7 +10,7 @@ h1, p, label     {
 
 p {
     color: white;
-    font-size: large;
+    font-size: medium;
 }
 
 body {
@@ -44,6 +44,17 @@ button:disabled {
 
 }
 
+th {
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type=color] {
+    cursor: pointer;
+}
+
 .playerForm {
     border-bottom: 3px solid black;
     padding-bottom: 1rem;
@@ -63,4 +74,8 @@ button:disabled {
 
 .header {
     border-bottom: 3px solid black;
+}
+
+.optionsToggle:hover {
+    cursor: pointer;
 }

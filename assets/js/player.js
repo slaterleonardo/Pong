@@ -3,13 +3,14 @@ class Player {
         this.score = score;
         this.side = side;
         this.paddle = paddle;
-        this.name = this.side === "left" ? "Player One" : "Player Two";
         this.message = document.querySelector(this.side === "left" ? "#playerOne" : "#playerTwo");
+
+        this.name = this.side === "left" ? "Player One" : "Player Two";
 
         this.nameListener(this.side === "left" ? "#playerOneName" : "#playerTwoName");
     }
     
-    async incrementScore() {
+    incrementScore = async () => {
         this.score++;
         this.message.innerHTML = `${this.name}: ${this.score} ++`;
 
@@ -18,14 +19,14 @@ class Player {
         this.message.innerHTML = `${this.name}: ${this.score}`;
     }
 
-    nameListener(tag) {
+    nameListener = (tag) => {
         document.querySelector(tag).addEventListener("change", (e) => {
             this.name = e.target.value;
             this.message.innerHTML = `${this.name}: ${this.score}`;
         });
     }
 
-    resetPosition() {
+    resetPosition = () => {
         this.paddle.y = (canvas.height / 2) - 75;
     }
 }

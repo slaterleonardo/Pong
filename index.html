@@ -13,20 +13,96 @@
         <p>Press Enter to Play!</p>
         <h1 id="message"></h1>
       </div>
-      <p id="playerOne">Player One: 0</p>
-      <div class="playerForm">
-        <label for="playerOneName">Name:</label>
-        <input type="text" id="playerOneName" name="playerOneName" />
+      <h1 class="optionsToggle">Options</h1>
+      <div id="options">
+        <table>
+          <tr>
+            <th>Straight:</th>
+            <td>
+              <input type="text" id="straightKey" value=" "/>
+            </td>
+          </tr>
+          <tr>
+            <th>Ball Color: </th>
+            <td>
+              <input type="color" id="ballColor" value="#ffffff"/>
+            </td>
+          </tr>
+        </table>
+        <p id="playerOne">Player One: 0</p>
+        <div class="playerForm">
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>
+                <input type="text" id="playerOneName"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Fill:</th>
+              <td>
+                <input type="color" id="playerOneFill"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Stroke:</th>
+              <td>
+                <input type="color" id="playerOneStroke"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Up:</th>
+              <td>
+                <input type="text" id="playerOneUpKey" value="w"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Down:</th>
+              <td>
+                <input type="text" id="playerOneDownKey" value="s"/>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p id="playerTwo">Player Two: 0</p>
+        <div class="playerForm">
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td>
+                <input type="text" id="playerTwoName"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Fill:</th>
+              <td>
+                <input type="color" id="playerTwoFill"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Stroke:</th>
+              <td>
+                <input type="color" id="playerTwoStroke"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Up:</th>
+              <td>
+                <input type="text" id="playerTwoUpKey" value="arrowUp"/>
+              </td>
+            </tr>
+            <tr>
+              <th>Down:</th>
+              <td>
+                <input type="text" id="playerTwoDownKey" value="arrowDown"/>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <p id="playerTwo">Player Two: 0</p>
-      <div class="playerForm">
-        <label for="playerTwoName">Name:</label>
-        <input type="text" id="playerTwoName" name="playerTwoName" />
-      </div>
-      <center>
-        <button>play!!!!!!!</button>
-        <p id="timer"></p>
-      </center>
+        <center>
+            <button>play!!!!!!!</button>
+        </center>
     </div>
     <div class="game">
       <canvas width="800" height="600"></canvas>
