@@ -7,8 +7,8 @@ let refreshRate = 1000 / 144;
 let paused = true;
 let ballColor = document.querySelector("#ballColor").value;
 
-let ballHeight = 40;
-let ballWidth = 40;
+let ballHeight = 20;
+let ballWidth = 20;
 
 let ballX;
 let ballY;
@@ -66,13 +66,14 @@ let frame = () => {
     };
 
     players.forEach((player) => {
-        player.paddle.draw();
         player.paddle.mover();
 
         if (player.paddle.hasCollided(ballX, ballY)) {
             ballX += (xFlipped ? velocityX : -velocityX);
             xFlipped = !xFlipped;
         }
+
+        player.paddle.draw();
     });
 
     if (ballX > canvas.width - ballHeight || ballX < 0) {
@@ -108,26 +109,21 @@ document.addEventListener("keydown", (e) => {
         return
     }
 
-    switch (e.key) {
-        case straightKey.value:
-            velocityY = 0;
-            break;
+    if (e.key === straightKey.value) {
+        velocityY = 0;
+        return
+    }
 
-        case players[0].paddle.upKey:
-            players[0].paddle.up = true;
-            break;
+    for (let i = 0; i < players.length; i++) {
+        switch (e.key) {
+            case players[i].paddle.downKey:
+                players[i].paddle.down = true;
+                break;
 
-        case players[0].paddle.downKey:
-            players[0].paddle.down = true;
-            break;
-
-        case players[1].paddle.upKey:
-            players[1].paddle.up = true;
-            break;
-
-        case players[1].paddle.downKey:
-            players[1].paddle.down = true;
-            break;
+            case players[i].paddle.upKey:
+                players[i].paddle.up = true;
+                break;
+        }
     }
 });
 
@@ -136,30 +132,23 @@ document.addEventListener("keyup", (e) => {
         return
     }
 
-    switch (e.key) {
-        case straightKey.value:
-            velocityY = Math.round(Math.random()) === 0 ? 1 : -1;
-            break;
+    if (e.key === straightKey.value) {
+        velocityY = Math.round(Math.random()) === 0 ? 1 : -1;
+        return
+    }
 
-        case players[0].paddle.upKey:
-            players[0].paddle.up = false;
-            players[0].paddle.handleStop("up");
-            break;
+    for (let i = 0; i < players.length; i++) {
+        switch (e.key) {
+            case players[i].paddle.downKey:
+                players[i].paddle.down = false;
+                players[i].paddle.handleStop("down");
+                break;
 
-        case players[0].paddle.downKey:
-            players[0].paddle.down = false;
-            players[0].paddle.handleStop("down");
-            break;
-
-        case players[1].paddle.upKey:
-            players[1].paddle.up = false;
-            players[1].paddle.handleStop("up");
-            break;
-
-        case players[1].paddle.downKey:
-            players[1].paddle.down = false;
-            players[1].paddle.handleStop("down");
-            break;
+            case players[i].paddle.upKey:
+                players[i].paddle.up = false;
+                players[i].paddle.handleStop("up");
+                break;
+        }
     }
 });
 
